@@ -1,15 +1,19 @@
-import "./index.css";
-import { useState, useEffect } from "react";
+import {useState} from "react"
 
 export default function App() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    setMessage("Welcome, user!");
+    console.log("Username:", username);
+    console.log("Password:", password);
+    if (username === 'user' && password === 'password') {
+      setMessage('Welcome, user!');
+    } else {
+      setMessage('Invalid username or password');
+    }
   };
 
   return (
